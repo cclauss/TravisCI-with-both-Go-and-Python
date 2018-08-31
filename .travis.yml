@@ -4,12 +4,13 @@ language: ruby
 
 addons:
   apt:
-    #sources:
+    sources:
     #  - deadsnakes
+      - sourceline: 'ppa:gophers/archive'
     #  - gophers/archive
     #  - longsleep/golang-backports
     update: true
-    packages: golang-go
+    packages: golang-1.10-go
     #- python
     #- python-pip
     #- python3-pip
