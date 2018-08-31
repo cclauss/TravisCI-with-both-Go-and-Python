@@ -4,10 +4,13 @@ go:
 
 addons:
   apt:
+    sources: deadsnakes
+    update: true
     packages:
     #- python
     - python-pip
-    - python3-pip
+    #- python3-pip
+    - python3.7
     #- python3
 
 #matrix:
@@ -30,6 +33,7 @@ before_script:
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
   - sudo python3 -m pip install --upgrade pip
-  - sudo python2 -m ensurepip --upgrade
+  #- sudo python2 -m ensurepip --upgrade
+  - sudo python2 -m pip install --upgrade pip
 
 script: true
