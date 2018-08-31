@@ -34,6 +34,11 @@ addons:
 
 before_script:
   - go version
+  - which go
+  - whereis go
+  - ls bin/g*
+  - ls /usr/bin/g*
+  - ls /usr/local/bin/g*
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
   - sudo python3 -m pip install --upgrade pip
