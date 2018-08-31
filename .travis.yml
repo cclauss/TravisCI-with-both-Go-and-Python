@@ -1,0 +1,35 @@
+language: go
+go:
+  - "1.10.x"
+
+addons:
+  apt:
+    packages:
+    #- python
+    #- python-pip
+    #- python3-pip
+    - python3
+
+#matrix:
+#  allow_failures:
+#    - python: 3.6
+#  include:
+#    - language: python
+#      go: "1.10.x"
+#      python: 2.7
+#      env: PIP_SUDO=""
+#    - language: python
+#      go: "1.10.x"
+#      python: 3.6
+#      env: PIP_SUDO=""
+#    - os: osx
+#      env: PIP_SUDO="sudo"
+
+before_script:
+  - go version
+  - python2 --version && python2 -m pip --version
+  - python3 --version && python2 -m pip --version
+  - sudo python3 -m ensurepip --upgrade
+  - sudo python2 -m ensurepip --upgrade
+
+script: true
