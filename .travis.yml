@@ -6,7 +6,7 @@ addons:
   apt:
     sources:
       #- deadsnakes
-      - gophers/archive
+      - gophers
     update: true
     packages: golang-1.10-go
     #- python
