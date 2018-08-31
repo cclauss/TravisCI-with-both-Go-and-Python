@@ -6,9 +6,9 @@ addons:
   apt:
     packages:
     #- python
-    #- python-pip
-    #- python3-pip
-    - python3
+    - python-pip
+    - python3-pip
+    #- python3
 
 #matrix:
 #  allow_failures:
@@ -29,7 +29,7 @@ before_script:
   - go version
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
-  - sudo python3 -m ensurepip --upgrade
+  - sudo python3 -m pip install --upgrade pip
   - sudo python2 -m ensurepip --upgrade
 
 script: true
