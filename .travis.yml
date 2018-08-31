@@ -34,6 +34,9 @@ addons:
 
 before_script:
   - go version
+  - dpkg -L golang-1.10-go
+  - dpkg -L golang-go
+  - dpkg -L golang
   - which go
   - whereis go
   - ls bin/g*
