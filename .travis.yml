@@ -1,16 +1,18 @@
-language: go
-go:
-  - "1.10.x"
+language: ruby
+#go:
+#  - "1.10.x"
 
 addons:
   apt:
-    sources: deadsnakes
+    sources:
+      #- deadsnakes
+      - gophers/archive
     update: true
-    packages:
+    packages: golang-1.10-go
     #- python
-    - python-pip
+    #- python-pip
     #- python3-pip
-    - python3.7
+    #- python3.7
     #- python3
 
 #matrix:
