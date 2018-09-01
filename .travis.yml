@@ -47,8 +47,9 @@ before_script:
   - source env/bin/activate
   - curl https://bootstrap.pypa.io/get-pip.py | python3.6
   - python3.6 -m pip --version
+  - python3.6 -m pip install --upgrade setuptools
   #- python2.7 --version && python2.7 -m pip --version
-  - sudo python3.6 -m pip install --upgrade pip
+  - python3.6 -m pip install --upgrade pip
   #- sudo python2 -m ensurepip --upgrade
   - sudo python  -m pip install --upgrade pip
 
