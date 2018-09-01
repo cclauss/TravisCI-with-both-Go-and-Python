@@ -42,7 +42,9 @@ before_script:
   - python    --version && python    -m pip --version
   - python2.7 --version && python2.7 -m pip --version
   - python3   --version # && python3  -m pip --version
-  - python3.7 --version && python3.7 -m pip --version
+  - python3.7 --version
+  - curl https://bootstrap.pypa.io/get-pip.py | python3.7
+  - python3.7 -m pip --version
   #- python2.7 --version && python2.7 -m pip --version
   - sudo python3.7 -m pip install --upgrade pip
   #- sudo python2 -m ensurepip --upgrade
