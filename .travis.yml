@@ -10,12 +10,12 @@ addons:
     packages:
       - python
       - python-pip
-      - python3.7
+      - python3.6
       - python3-pip
  
 #matrix:
 #  allow_failures:
-#    - python: 3.7
+#    - python: 3.6
 #  include:
 #    - language: python
 #      go: "1.10.x"
@@ -23,7 +23,7 @@ addons:
 #      env: PIP_SUDO=""
 #    - language: python
 #      go: "1.10.x"
-#      python: 3.7
+#      python: 3.6
 #      env: PIP_SUDO=""
 #    - os: osx
 #      env: PIP_SUDO="sudo"
@@ -33,7 +33,7 @@ before_script:
   - ls /usr/bin/p*
   #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
   #- dpkg -L python   # --> /usr/share/python
-  #- dpkg -L python3.7  # --> /usr/lib/python3.7
+  #- dpkg -L python3.6  # --> /usr/lib/python3.7
   #- dpkg -L python3-pip python3-pip  # --> 
   #- PATH=/usr/lib:${PATH}
   #- go version
@@ -42,13 +42,13 @@ before_script:
   - python    --version && python    -m pip --version
   - python2.7 --version && python2.7 -m pip --version
   - python3   --version # && python3  -m pip --version
-  - python3.7 --version
-  - python3.7 -m venv env --without-pip
+  - python3.6 --version
+  - python3.6 -m venv env --without-pip
   - source env/bin/activate
-  - curl https://bootstrap.pypa.io/get-pip.py | python3.7
-  - python3.7 -m pip --version
+  - curl https://bootstrap.pypa.io/get-pip.py | python3.6
+  - python3.6 -m pip --version
   #- python2.7 --version && python2.7 -m pip --version
-  - sudo python3.7 -m pip install --upgrade pip
+  - sudo python3.6 -m pip install --upgrade pip
   #- sudo python2 -m ensurepip --upgrade
   - sudo python  -m pip install --upgrade pip
 
