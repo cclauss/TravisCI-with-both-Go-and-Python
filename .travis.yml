@@ -1,7 +1,7 @@
 language:
   - go
   - python      # This does not really work :-(
-sudo: required  # Needed for replacing Pythons
+# sudo: required  # Needed for replacing Pythons
 
 addons:
   apt:
@@ -39,8 +39,9 @@ before_script:
   #- ls /usr/share/python/debpython
   #- ls -r /usr/share/python3/debpython
   - python    --version && python    -m pip --version
-  - python3   --version && python3   -m pip --version
+  - python3   --version # && python3   -m pip --version
   - python3.7 --version && python3.7 -m pip --version
+  - python2.7 --version && python2.7 -m pip --version
   - sudo python3 -m pip install --upgrade pip
   #- sudo python2 -m ensurepip --upgrade
   - sudo python  -m pip install --upgrade pip
