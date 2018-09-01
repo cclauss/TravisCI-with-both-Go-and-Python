@@ -1,13 +1,14 @@
 language:
   - go
-  - python
+  - python  # This does not really work :-(
 
-#addons:
-#  apt:
-#    sources:
-#      - sourceline: 'ppa:gophers/archive'
-#    update: true
-#    packages: golang-1.10-go
+addons:
+  apt:
+    sources: deadsnakes
+    update: true
+    packages:
+      - python-pip
+      - python3-pip
 
 #matrix:
 #  allow_failures:
@@ -27,8 +28,11 @@ language:
 before_script:
   - go version
   #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
-  - PATH=/usr/lib/go-1.10/bin:${PATH}
-  - go version
+  - dpkg -L python-pip  # --> 
+  - dpkg -L python3-pip  # --> 
+  #- dpkg -L python3-pip python3-pip  # --> 
+  #- PATH=/usr/lib/go-1.10/bin:${PATH}
+  #- go version
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
   - sudo python3 -m pip install --upgrade pip
