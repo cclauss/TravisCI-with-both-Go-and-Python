@@ -1,11 +1,13 @@
-language: python
+language:
+  - go
+  - python
 
-addons:
-  apt:
-    sources:
-      - sourceline: 'ppa:gophers/archive'
-    update: true
-    packages: golang-1.10-go
+#addons:
+#  apt:
+#    sources:
+#      - sourceline: 'ppa:gophers/archive'
+#    update: true
+#    packages: golang-1.10-go
 
 #matrix:
 #  allow_failures:
