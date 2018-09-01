@@ -1,6 +1,7 @@
 language:
   - go
-  - python  # This does not really work :-(
+  - python      # This does not really work :-(
+sudo: required  # Needed for replacing Pythons
 
 addons:
   apt:
