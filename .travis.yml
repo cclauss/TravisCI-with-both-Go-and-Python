@@ -35,6 +35,8 @@ before_script:
   #- dpkg -L python3-pip python3-pip  # --> 
   - PATH=/usr/share:${PATH}
   #- go version
+  - /usr/share/python -V
+  - /usr/share/python3 -V
   - python  --version && python  -m pip --version
   - python3 --version && python3 -m pip --version
   - sudo python3 -m pip install --upgrade pip
