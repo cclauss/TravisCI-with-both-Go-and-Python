@@ -30,7 +30,7 @@ before_script:
   - go version
   #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
   - dpkg -L python   # --> /usr/share/python
-  - dpkg -L python3  # --> /usr/share/python
+  - dpkg -L python3.7  # --> /usr/share/python
   #- dpkg -L python3-pip python3-pip  # --> 
   - PATH=/usr/share:${PATH}
   #- go version
