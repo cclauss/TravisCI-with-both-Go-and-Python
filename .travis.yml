@@ -43,6 +43,8 @@ before_script:
   - python2.7 --version && python2.7 -m pip --version
   - python3   --version # && python3  -m pip --version
   - python3.7 --version
+  - python3.7 -m venv env --without-pip
+  - source env/bin/activate
   - curl https://bootstrap.pypa.io/get-pip.py | python3.7
   - python3.7 -m pip --version
   #- python2.7 --version && python2.7 -m pip --version
