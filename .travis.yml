@@ -9,12 +9,11 @@ addons:
     packages:
       - python
       - python-pip
-      - python3
-      - python3-pip
-
+      - python3.7
+ 
 #matrix:
 #  allow_failures:
-#    - python: 3.6
+#    - python: 3.7
 #  include:
 #    - language: python
 #      go: "1.10.x"
@@ -22,7 +21,7 @@ addons:
 #      env: PIP_SUDO=""
 #    - language: python
 #      go: "1.10.x"
-#      python: 3.6
+#      python: 3.7
 #      env: PIP_SUDO=""
 #    - os: osx
 #      env: PIP_SUDO="sudo"
