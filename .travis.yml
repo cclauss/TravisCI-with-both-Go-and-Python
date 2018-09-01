@@ -25,7 +25,7 @@ addons:
 before_script:
   - go version
   #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
-  - PATH=/usr/lib/go-1.10/bin/go:${PATH}
+  - export PATH=/usr/lib/go-1.10/bin/go:${PATH}
   - go version
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
