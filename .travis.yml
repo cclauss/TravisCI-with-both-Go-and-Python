@@ -11,7 +11,7 @@ addons:
       - python
       - python-pip
       - python3.7
-      - python3.7-pip
+      - python3-pip
  
 #matrix:
 #  allow_failures:
