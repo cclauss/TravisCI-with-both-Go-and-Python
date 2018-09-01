@@ -7,7 +7,9 @@ addons:
     sources: deadsnakes
     update: true
     packages:
+      - python
       - python-pip
+      - python3
       - python3-pip
 
 #matrix:
@@ -28,13 +30,13 @@ addons:
 before_script:
   - go version
   #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
-  - dpkg -L python-pip  # --> 
-  - dpkg -L python3-pip  # --> 
+  - dpkg -L python  # --> 
+  - dpkg -L python3  # --> 
   #- dpkg -L python3-pip python3-pip  # --> 
   #- PATH=/usr/lib/go-1.10/bin:${PATH}
   #- go version
   - python2 --version && python2 -m pip --version
-  - python3 --version && python2 -m pip --version
+  - python3 --version && python3 -m pip --version
   - sudo python3 -m pip install --upgrade pip
   #- sudo python2 -m ensurepip --upgrade
   - sudo python2 -m pip install --upgrade pip
