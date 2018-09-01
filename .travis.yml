@@ -1,21 +1,11 @@
-language: ruby
-#go:
-#  - "1.10.x"
+language: python
 
 addons:
   apt:
     sources:
-    #  - deadsnakes
       - sourceline: 'ppa:gophers/archive'
-    #  - gophers/archive
-    #  - longsleep/golang-backports
     update: true
     packages: golang-1.10-go
-    #- python
-    #- python-pip
-    #- python3-pip
-    #- python3.7
-    #- python3
 
 #matrix:
 #  allow_failures:
@@ -34,14 +24,9 @@ addons:
 
 before_script:
   - go version
-  - dpkg -L golang-1.10-go
-  - dpkg -L golang-go
-  - dpkg -L golang
-  - which go
-  - whereis go
-  - ls bin/g*
-  - ls /usr/bin/g*
-  - ls /usr/local/bin/g*
+  - dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
+  - PATH=/usr/lib/go-1.10/bin/go;${PATH}
+  - go version
   - python2 --version && python2 -m pip --version
   - python3 --version && python2 -m pip --version
   - sudo python3 -m pip install --upgrade pip
