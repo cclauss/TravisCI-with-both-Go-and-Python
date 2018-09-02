@@ -10,7 +10,9 @@ matrix:
     - python: 3.6
   include:
     - python: 2.7
-      env: GO="1.10.4"  # "1.10.x" does NOT work :-(
+      env: GO="1.10.x"  # "1.10.x" does NOT work :-(
+    - python: 2.7
+      env: GO="1.11.x"
     - python: 2.7
       env: GO="stable"  # Currently "1.11"
     - python: 2.7
@@ -28,7 +30,7 @@ install:
     mkdir -p "$TRAVIS_BUILD_DIR"
     rsync -az . "$TRAVIS_BUILD_DIR"
     cd "$TRAVIS_BUILD_DIR"
-    eval "$(gimme $GO)"
+    eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=${GO} bash)"
 
 before_script:
   - go version && python --version && python -m pip --version
