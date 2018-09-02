@@ -16,12 +16,11 @@ matrix:
       env: GO=1.11.x
     - python: 2.7
       env: GO=stable  # Currently "1.11"
-    - python: 2.7
-      env: GO=1.10.4
-      os: osx
+    - os: osx
+      env: GO=1.10.x
       # before_install: brew install --upgrade gimme
     - python: 3.6
-      env: GO="1.10.4"
+      env: GO=1.10.x
 
 install:
   - |
