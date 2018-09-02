@@ -10,14 +10,15 @@ matrix:
     - python: 3.6
   include:
     - python: 2.7
-      env: GO=1.10
+      env: GO=1.10.x
     - python: 2.7
-      env: GO=1.11
+      env: GO=1.11.x
     - python: 2.7
+      env: GO=1.10.x
       os: osx
-      install: brew install --upgrade go@1.10
+      install: brew install --upgrade go@${GO}
     - python: 3.6
-      env: GO=1.10
+      env: GO=1.10.x
 
 install:
   - |
