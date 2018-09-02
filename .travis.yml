@@ -8,6 +8,7 @@ cache:
 matrix:
   allow_failures:
     - python: 3.6
+    - env: GO="stable"
   include:
     - python: 2.7
       env: GO="1.10.x"  # "1.10.x" does NOT work :-(
