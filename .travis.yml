@@ -11,15 +11,15 @@ matrix:
     - env: GO="stable"
   include:
     - python: 2.7
-      env: GO="1.10.x"  # "1.10.x" does NOT work :-(
+      env: GO=1.10.x
     - python: 2.7
-      env: GO="1.11.x"
+      env: GO=1.11.x
     - python: 2.7
-      env: GO="stable"  # Currently "1.11"
+      env: GO=stable  # Currently "1.11"
     - python: 2.7
-      env: GO="1.10.4"
+      env: GO=1.10.4
       os: osx
-      before_install: brew install --upgrade gimme
+      # before_install: brew install --upgrade gimme
     - python: 3.6
       env: GO="1.10.4"
 
