@@ -1,26 +1,37 @@
-language:
-  - go
+language: python
 
-addons:
-  apt:
-    sources: deadsnakes
-    update: true
-    packages:
-      - python
-      - python-pip
-      - python3.6
-      - python3.6-venv
- 
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/.cache/pre-commit
+
 matrix:
   allow_failures:
     - python: 3.6
   include:
-     - python: 2.7
-     - python: 3.6
+    - python: 2.7
+      env: GO=1.10
+    - python: 2.7
+      env: GO=1.11
+    - python: 3.6
+      env: GO=1.10
+
+install:
+  - |
+    export GOPATH=~/gopath
+    export PATH="$GOPATH/bin:$PATH"
+    export TRAVIS_BUILD_DIR="$GOPATH/src/github.com/$TRAVIS_REPO_SLUG"
+    mkdir -p "$TRAVIS_BUILD_DIR"
+    rsync -az . "$TRAVIS_BUILD_DIR"
+    cd "$TRAVIS_BUILD_DIR"
+    eval "$(gimme $GO)"
 
 before_script:
+  - go version
+  - go get -t
+  - go test -v
   - echo ${TRAVIS_PYTHON_VERSION}
-  - python${TRAVIS_PYTHON_VERSION} --version
-  - python${TRAVIS_PYTHON_VERSION} -m pip --version
+  - python --version
+  - python -m pip --version
 
 script: true
