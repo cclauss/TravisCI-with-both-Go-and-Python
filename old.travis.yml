@@ -1,0 +1,57 @@
+language:
+  - go
+  - python      # This does not really work :-(
+# sudo: required  # Needed for replacing Pythons
+
+addons:
+  apt:
+    sources: deadsnakes
+    update: true
+    packages:
+      - python
+      - python-pip
+      - python3.7
+      - python3-pip
+ 
+#matrix:
+#  allow_failures:
+#    - python: 3.6
+#  include:
+#    - language: python
+#      go: "1.10.x"
+#      python: 2.7
+#      env: PIP_SUDO=""
+#    - language: python
+#      go: "1.10.x"
+#      python: 3.6
+#      env: PIP_SUDO=""
+#    - os: osx
+#      env: PIP_SUDO="sudo"
+
+before_script:
+  - go version
+  - ls /usr/bin/p*
+  #- dpkg -L golang-1.10-go  # --> /usr/lib/go-1.10/bin/go
+  #- dpkg -L python   # --> /usr/share/python
+  #- dpkg -L python3.6  # --> /usr/lib/python3.7
+  #- dpkg -L python3-pip python3-pip  # --> 
+  #- PATH=/usr/lib:${PATH}
+  #- go version
+  #- ls /usr/share/python/debpython
+  #- ls -r /usr/share/python3/debpython
+  # ${TRAVIS_PYTHON_VERSION}
+  - python    --version && python    -m pip --version
+  - python2.7 --version && python2.7 -m pip --version
+  - python3   --version # && python3  -m pip --version
+  - python3.7 --version
+  - python3.7 -m venv env --without-pip
+  - source env/bin/activate
+  - curl https://bootstrap.pypa.io/get-pip.py | python3.7
+  - python3.7 -m pip --version
+  - python3.7 -m pip install --upgrade setuptools
+  #- python2.7 --version && python2.7 -m pip --version
+  - python3.7 -m pip install --upgrade pip
+  #- sudo python2 -m ensurepip --upgrade
+  - sudo python  -m pip install --upgrade pip
+
+script: true
